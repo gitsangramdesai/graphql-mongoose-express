@@ -1,0 +1,128 @@
+mutation {
+  addAuthor(
+  name: "Eiji Yoshikawa", 
+  age: 70, 
+  bio: "was a Japanese historical novelist. Among his best-known novels are revisions of older classics.", 
+  picture: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Eiji_Yoshikawa.jpg" 
+  ) {
+    name
+    bio
+  }
+}
+
+mutation {
+  addAuthor(
+  name: "Swara Desai", 
+  age: 60, 
+  bio: "Book on School Life", 
+  picture: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Eiji_Yoshikawa.jpg" 
+  ) {
+    name
+    bio
+  }
+}
+
+mutation {
+  addAuthor(
+  name: "Sangrm Desai", 
+  age: 60, 
+  bio: "Book on College Life", 
+  picture: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Eiji_Yoshikawa.jpg" 
+  ) {
+    name
+    bio
+  }
+}
+
+
+mutation {
+  addBook(
+      title: "Musashi", 
+      summary: "The long epic comprises seven \"books\" detailing the exploits of Miyamoto Musashi", 
+      genre: "Historical Fiction", 
+      bookCover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2F3%2F34%2FMusashiNovel.jpg&f=1&nofb=1", 
+      authorID: "6479af5abb25239f45ddebd2"
+    ) {
+    title 
+    author {
+      name
+    }
+  }
+}
+
+
+mutation {
+  addBook(
+      title: "Book on School Life", 
+      summary: "Book on School Life", 
+      genre: "Historical Fiction", 
+      bookCover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2F3%2F34%2FMusashiNovel.jpg&f=1&nofb=1", 
+      authorID: "6479ba64d7ace78c79f67075"
+    ) {
+    title 
+    author {
+      name
+    }
+  }
+}
+
+mutation {
+  addBook(
+      title: "Book on College Life", 
+      summary: "Book on School Life", 
+      genre: "Historical Fiction", 
+      bookCover: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2F3%2F34%2FMusashiNovel.jpg&f=1&nofb=1", 
+      authorID: "6479ba7bd7ace78c79f67077"
+    ) {
+    title 
+    author {
+      name
+    }
+  }
+}
+
+
+
+{
+  authors {
+   name
+   books {
+     title
+    }
+  }
+}
+
+
+{
+  books {
+   title
+   author {
+     name
+    }
+  }
+}
+
+
+{
+  book (id:"6479bb0fd7ace78c79f6707c") {
+    id,
+    title,
+    summary,
+    bookCover,
+    author {
+      id,
+      name
+    }
+  }
+}
+
+
+{
+  author (id:"6479ba7bd7ace78c79f67077") {
+    id,
+    name,
+    books {
+      title
+    }
+  }
+}
